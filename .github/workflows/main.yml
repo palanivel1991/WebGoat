@@ -29,12 +29,12 @@ jobs:
     # GitHub API Token
     #github_token: # optional, default is ${{ github.token }}
     # Additional parameters for AST scan
-          additional_params: --report-format pdf --output-path . --output-name result # optional, default is
+          additional_params: --report-format sarif --output-path . --output-name result # optional, default is
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with: 
         # Path to SARIF file relative to the root of the repository
-          sarif_file: result.pdf
+          sarif_file: result.sarif
 
     # Repository name for PR decoration
     #repo_name: # optional, default is ${{ github.event.repository.name }}
